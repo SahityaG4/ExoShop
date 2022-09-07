@@ -1,13 +1,113 @@
+
+html {
+  font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
+  box-sizing: border-box;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root{ /*since wehave root element in index.html and everything is renedered in it */
+  height: 100%;
+}  
+
+/* Layout */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
 }
+header {
+  grid-area: header;
+  background-color: #203040;
+}
+main {
+  grid-area: main;
+  padding: 1rem;
+}
+footer {
+  grid-area: footer;
+  background-color: #203040;
+  color: #ffffff;
+}
+
+.row.center {
+  justify-content: center;
+}
+
+/* navbar */
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(231, 108, 52);
+}
+
+/*Header*/
+header a {
+  /* all the links inside header*/
+  color: white;
+  padding: 1rem;
+}
+
+a.brand {
+  /* anchor tags with class brand*/
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.row {
+  /* to arrange in a row next to each other*/
+  display: flex; /* to arrange next to each other*/
+  flex-wrap: wrap; /*to make rows responsive*/
+  justify-content: space-between; /* to give space between right and left most*/
+  align-items: center;
+}
+/*products*/
+
+
+/* product image size*/
+img {
+  border-radius: 0.5rem;
+}
+img.medium {
+  max-width: 29rem;
+  width: 100%;
+}
+
+/* card */
+
+.card{
+    border: 0.1rem #c0c0c0 solid;
+    background-color: #f8f8f8;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+.card-body > * { /*elements inside card-body (DIRECT CHILDREN OF CARD-BODY)*/
+  margin-bottom: 0.5rem;
+}
+.price {
+  font-size: 2rem;
+}
+/* Rating */
+.rating span {
+  color: #f0c040; /*gold color*/
+  margin: 0.1rem;
+}
+
