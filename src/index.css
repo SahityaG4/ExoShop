@@ -110,4 +110,7 @@ img.medium {
   color: #f0c040; /*gold color*/
   margin: 0.1rem;
 }
-
+.rating span:last-child{
+  /*we can use last child which is the last element of the parent and we can also use nth last child*/
+  color:#404040
+}
